@@ -1,0 +1,40 @@
+{
+	"layer": "top",
+	
+	"modules-left": ["tray"],
+	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["memory", "cpu", "pulseaudio", "clock"],
+	
+	"hypr/window": 
+	{
+		"max-length": 50
+	},
+	
+	"clock": 
+	{
+        	"format-alt": "{:%a, %d %b %Y}"
+	},
+	
+	"tray": 
+	{
+        	"icon-size": 15,
+        	"spacing": 8
+        },
+	"pulseaudio": 
+	{
+		"icon-size": 15,
+    		"format": "{volume}%",
+    		"scroll-step": 1,
+    		"on-click": "pavucontrol"
+	},
+	"memory":
+	{
+		"icon-size": 15,
+		"format": "{used}GiB"
+	},
+	"cpu":
+	{
+		"icon-size": 15,
+		"format": "{usage}%"
+	}
+}
