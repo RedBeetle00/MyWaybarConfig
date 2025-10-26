@@ -1,2 +1,2 @@
 ## How it looks like
-![image description](waybarex)
+![image description](waybarex.png)
