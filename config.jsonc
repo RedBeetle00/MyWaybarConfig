@@ -3,7 +3,7 @@
 	
 	"modules-left": ["tray"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["memory", "cpu", "pulseaudio", "clock"],
+	"modules-right": ["custom/vpn","custom/gpu_usage","custom/cpu_temp","cpu","memory","pulseaudio","clock"],
 	
 	"hypr/window": 
 	{
@@ -20,21 +20,48 @@
         	"icon-size": 15,
         	"spacing": 8
         },
-	"pulseaudio": 
+	"pulseaudio":
 	{
-		"icon-size": 15,
-    		"format": "{volume}%",
-    		"scroll-step": 1,
-    		"on-click": "pavucontrol"
+		"format": "{volume}% {icon} ",
+		"format-bluetooth": "{volume}% {icon} ",
+		"format-muted": "",
+		"format-icons": {
+			"alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol"
 	},
 	"memory":
 	{
 		"icon-size": 15,
-		"format": "{used}GiB"
+		"format": "{used}GiB  "
 	},
 	"cpu":
 	{
 		"icon-size": 15,
-		"format": "{usage}%"
+		"format": "{usage}% "
+	},
+	"custom/gpu_usage":
+	{
+		"icon-size": 15,
+		"exec": "~/.config/waybar/scripts/gpu_usage.sh",
+        	"interval": 5,
+        	"format": " {}  ",
+        	"tooltip": false
+	},
+	"custom/cpu_temp":
+	{
+		"icon-size": 15,
+		"exec": "/home/redbeetle/.config/waybar/scripts/cpu_temp.sh",
+		"interval": 5,
+		"format": " {}℃"
+	},
+	"custom/vpn":
+	{
+		"icon-size": 15,
+		"exec": "/usr/local/bin/vpnstatus",
+		"format": " {} ",
+		"interval": 1
 	}
 }
